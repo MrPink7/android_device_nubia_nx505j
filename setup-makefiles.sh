@@ -176,7 +176,8 @@ PRODUCT_PACKAGES += \\
     libqcci_legacy \\
     libdiag \\
     libqmi_client_qmux \\
-    libdsutils 
+    libdsutils \\
+    libuiblur
 
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
 EOF
@@ -424,6 +425,25 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libuiblur
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/vendor/lib/libuiblur.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
+include \$(BUILD_PREBUILT)
+
+ifeq (\$(LOCAL_PATH)/radio, \$(wildcard \$(LOCAL_PATH)/radio))
+
+RADIO_FILES := \$(shell cd \$(LOCAL_PATH)/radio ; ls)
+\$(foreach f, \$(RADIO_FILES), \\
+    \$(call add-radio-file,radio/\$(f)))
+
+endif
 
 endif
 
