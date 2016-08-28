@@ -221,3 +221,6 @@ SKIP_BOOT_JARS_CHECK := true
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/nubia/nx505j/sepolicy
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
