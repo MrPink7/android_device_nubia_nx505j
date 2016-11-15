@@ -43,7 +43,6 @@ on init
 on fs
     mount_all fstab.qcom
 	
-
     restorecon_recursive   /persist
     mkdir /persist/data 0700 system system
     mkdir /persist/data/sfs 0700 system system
@@ -130,7 +129,7 @@ service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
    group system
    disabled
 
-service thermal-engine /system/bin/thermal-engine --config /system/etc/thermal-engine-8974pro.conf
+service thermal-engine /system/vendor/bin/thermal-engine --config /system/etc/thermal-engine-8974pro.conf
    class main
    user root
    socket thermal-send-client stream 0666 system system
@@ -177,4 +176,3 @@ on property:softkey.change=1
 
 on property:dev.bootcomplete=1
     setprop sys.io.scheduler "bfq"
-

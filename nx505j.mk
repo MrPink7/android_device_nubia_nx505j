@@ -104,9 +104,9 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
 # Charger
-PRODUCT_PACKAGES += \
-    charger \
-    charger_res_images
+#PRODUCT_PACKAGES += \
+#    charger \
+#    charger_res_images
 
 # Display
 PRODUCT_PACKAGES += \
@@ -138,8 +138,6 @@ PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
     qcom.fmradio
-    #FMRadio \
-    #libfmjni
 
 # Dot View Case
 PRODUCT_PACKAGES += Dotcase
@@ -230,8 +228,8 @@ PRODUCT_PACKAGES += \
 #    libOmxMux \
 #    libOmxVdecHevc \
 
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+#PRODUCT_BOOT_JARS += \
+#    qcmediaplayer
 
 # Power
 PRODUCT_PACKAGES += \
@@ -263,7 +261,7 @@ PRODUCT_PACKAGES += \
 
 # for nubia camera app
 PRODUCT_PACKAGES += \
-    libnubia
+    libshim_nubia
 
 # Thermal config
 PRODUCT_COPY_FILES += \
@@ -309,10 +307,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libion
-
-PRODUCT_PACKAGES += \
-    LatinIME \
-    libjni_latinime
 
 # GPS configuration
 PRODUCT_COPY_FILES += \

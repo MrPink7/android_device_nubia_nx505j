@@ -33,9 +33,8 @@ on early-init
     chown system system /sys/kernel/debug/kgsl/proc
 
 on init
-    # Preload the BoringSSL wrapper
-    export LD_PRELOAD "/system/lib/libboringssl-compat.so"
-    export LD_SHIM_LIBS /system/lib/libbuffer_manager.so|libnubia.so
+    # LIB SHIM
+    export LD_SHIM_LIBS "/system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so:/system/lib/libnubiajpeg.so|/system/lib/libshim_nubia.so:/system/lib/libbuffer_manager.so|libshim_nubia.so"
 
     # Set permissions for persist partition
     mkdir /persist 0771 system system
@@ -920,7 +919,7 @@ service battery_monitor /system/bin/battery_monitor
 service_redefine ril-daemon /system/bin/rild
     class main
     socket rild stream 660 root radio
-    socket sap_uim_socket1 stream 660 bluetooth bluetooth
+    #socket sap_uim_socket1 stream 660 bluetooth bluetooth
     socket rild-debug stream 660 radio system
     user root
     group radio cache inet misc audio sdcard_rw qcom_oncrpc qcom_diag log net_raw diag
@@ -928,7 +927,7 @@ service_redefine ril-daemon /system/bin/rild
 service ril-daemon2 /system/bin/rild -c 2
     class main
     socket rild2 stream 660 root radio
-    socket sap_uim_socket2 stream 660 bluetooth bluetooth
+    #socket sap_uim_socket2 stream 660 bluetooth bluetooth
     socket rild-debug2 stream 660 radio system
     user root
     disabled
@@ -937,7 +936,7 @@ service ril-daemon2 /system/bin/rild -c 2
 service ril-daemon3 /system/bin/rild -c 3
     class main
     socket rild3 stream 660 root radio
-    socket sap_uim_socket3 stream 660 bluetooth bluetooth
+    #socket sap_uim_socket3 stream 660 bluetooth bluetooth
     socket rild-debug3 stream 660 radio system
     user root
     disabled
