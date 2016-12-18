@@ -3,7 +3,8 @@
 #
 ro.vendor.extension_library=libqti-perfd-client.so
 
-persist.sys.usb.config=adb
+#persist.sys.usb.config=adb
+qcom.bluetooth.soc=smd
 
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
@@ -27,6 +28,7 @@ ro.ril.force_eri_from_xml=true
 persist.radio.apm_sim_not_pwdn=1
 ro.telephony.ril.config=simactivation
 persist.data.qmi.adb_logmask=0
+persist.radio.msgtunnel.start=false
 
 persist.radio.oem_socket=false
 persist.radio.no_wait_for_card=1
@@ -59,6 +61,11 @@ media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-fma2dp=true
 media.stagefright.enable-scan=true
+
+# enable video recording
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+
 mmp.enable.3g2=true
 mm.enable.smoothstreaming=true
 media.aac_51_output_enabled=true
@@ -79,6 +86,12 @@ ro.data.large_tcp_window_size=true
 #system props for time-services
 persist.timed.enable=true
 
+# Storage
+ro.sys.sdcardfs=true
+
+# Wifi
+wifi.interface=wlan0
+
 #
 # system prop for opengles version
 #
@@ -95,6 +108,7 @@ telephony.lteOnCdmaDevice=1
 
 #
 # System props for bluetooth
+ro.bluetooth.request.master=true
 # System prop to turn on hfp client
 bluetooth.hfp.client=1
 

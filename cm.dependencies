@@ -1,9 +1,5 @@
 [
   {
-    "repository": "android_external_stlport",
-    "target_path": "external/stlport"
-  },
-  {
     "repository": "android_external_sony_boringssl-compat",
     "target_path": "external/sony/boringssl-compat"
   },
@@ -16,8 +12,8 @@
     "target_path": "hardware/qcom/fm"
   },
   {
-    "repository": "android_external_connectivity",
-    "target_path": "external/connectivity"
+   "repository": "android_packages_resources_devicesettings",
+   "target_path": "packages/resources/devicesettings"
   },
   {
     "repository": "arm-cortex_a15-linux-gnueabihf-linaro_4.9",
