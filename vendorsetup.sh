@@ -1,0 +1,3 @@
+add_lunch_combo lineage_nx505j-userdebug
+add_lunch_combo lineage_nx505j-eng
+
